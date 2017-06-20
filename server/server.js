@@ -19,14 +19,20 @@ io.on('connection', (socket) => {
 
    socket.on('createMessage',(message)=>{
     console.log('create Message',message);
+   /*  io.emit('newMessage',{
+         from: message.from,
+         text:message.text,
+         createdAt:new Date().getTime()
+     });*/
+
    })
 
-    socket.emit('newMessage',{
+/*    socket.emit('newMessage',{
         from: 'Amarnath Rajasekaran',
         text:'Andrew Mead course',
         createdAt: new Date().getTime()
 
-    });
+    });*/
 });
 
 app.use(express.static(publicPath));
