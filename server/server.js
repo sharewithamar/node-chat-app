@@ -17,6 +17,16 @@ io.on('connection', (socket) => {
         console.log("User was disconnected");
     });
 
+   socket.on('createEmail',(mail)=>{
+    console.log('create Email',mail);
+   })
+
+    socket.emit('newEmail',{
+        name: 'Amarnath Rajasekaran',
+        age:28,
+        createdAt: 12435
+
+    });
 });
 
 app.use(express.static(publicPath));
