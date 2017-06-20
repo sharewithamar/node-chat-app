@@ -17,14 +17,14 @@ io.on('connection', (socket) => {
         console.log("User was disconnected");
     });
 
-   socket.on('createEmail',(mail)=>{
-    console.log('create Email',mail);
+   socket.on('createMessage',(message)=>{
+    console.log('create Message',message);
    })
 
-    socket.emit('newEmail',{
-        name: 'Amarnath Rajasekaran',
-        age:28,
-        createdAt: 12435
+    socket.emit('newMessage',{
+        from: 'Amarnath Rajasekaran',
+        text:'Andrew Mead course',
+        createdAt: new Date().getTime()
 
     });
 });
